@@ -1,0 +1,66 @@
+<div class="container dashboard py-4">
+  <div class="heading page-title">
+    <h1>Dashboard</h1>
+  </div>
+  <div class="row">
+    <!-- Actions -->
+    <div class="info-container inline col-md-8 offset-md-0 col-10 offset-1 ml-md-0 mr-auto mx-sm-auto">
+      <div class="interior col-10 offset-1 mx-auto content pb-4">
+        <div class="section-head">
+          <i class="fa fa-fw fa-arrow-circle-right"></i>
+          <h1>Actions</h1>
+        </div>
+        <p>Log dives and training, and add users, equipment, and inventory here.</p>
+        <div class="row">
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dive-log" mdbWavesEffect>Log Dives</button>
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Log Training</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/add-diver" mdbWavesEffect>Add Diver</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/add-dive" mdbWavesEffect>Add Dive Log</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Add Equipment</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Add Inventory</button> <!-- placeholder routerLink -->
+        </div>
+      </div>
+    </div>
+    <!-- Divers -->
+    <div class="info-container col-md-3 offset-md-0 col-10 offset-1">
+      <div class="interior col-10 col-offset-1 mx-auto text-center content pb-4">
+        <div class="section-head">
+          <i class="fa fa-fw fa-user-circle"></i>
+          <h1>Divers</h1>
+        </div>
+        <ul class="diver-list col-10 col-offset-1 mx-auto px-0">
+          <ng-container *ngFor="let diver of divers;">
+            <li><a routerLink="/dive-log">{{ diver }}</a></li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <!-- Reports -->
+    <div class="info-container col-md-8 offset-md-0 col-10 offset-1 ml-md-0 mr-auto mx-sm-auto">
+      <div class="interior col-10 offset-1 mx-auto content pb-4">
+        <div class="section-head">
+          <i class="fa fa-fw fa-file-text "></i>
+          <h1>Reports</h1>
+        </div>
+        <div class="row col-md-12 mx-auto my-2">
+          <h5>Dive Totals</h5>
+          <button mdbbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>6 Month / Diver</button> <!-- placeholder routerLink -->
+          <button mdbbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>12 Month / Diver</button> <!-- placeholder routerLink -->
+        </div>
+        <div class="chart-wrapper row col-md-12 mx-auto my-2">
+          <app-dive-log-chart class="dive-log-chart"></app-dive-log-chart>
+        </div>
+        <div class="row col-md-12 mx-auto my-2">
+          <h5>Summary</h5>
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Dives by Month / Diver</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Service Summary</button> <!-- placeholder routerLink -->
+          <button mdbtn class="btn btn-outline btn-rounded btn-accent waves-light my-5" routerLink="/dashboard" mdbWavesEffect>Training Summary</button> <!-- placeholder routerLink -->
+        </div>
+        <div class="chart-wrapper diver-chart row col-md-12 mx-auto my-2">
+          <app-diver-chart></app-diver-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

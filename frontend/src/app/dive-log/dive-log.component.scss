@@ -1,0 +1,141 @@
+@import '../../vars';
+@import '../login/login.component';
+
+ul {
+  list-style-type: none;
+  margin: 20px;
+  padding: 0;
+
+  li {
+      background: $text;
+      padding: 2em;
+      border-radius: 4px;
+      margin-bottom: 7px;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+
+      p {
+          font-weight: bold;
+          margin-left: 200px;
+      }
+
+      img {
+          border-radius: 50%;
+          width: 100%;
+      }
+
+      button {
+        display: inline-block;
+        margin: 20px;
+      }
+  }
+}
+
+.heading {
+  margin: 15px;
+  color: white;
+}
+
+.subheading {
+  margin: 15px;
+  color: white;
+}
+
+#diver-select {
+  padding: 10px;
+  margin: 15px;
+}
+
+#diver-select-label {
+  color: white;
+  font-size: 1.25rem;
+  margin: 15px;
+}
+
+.delete {
+  height: 27px;
+  font-size: 0.95em;
+  letter-spacing: 0.005rem;
+}
+
+
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(75, 75, 75);
+  margin: 15px;
+}
+
+#container > div {
+  color: white;
+  text-align:center;
+  width: 150px;
+  height: 35px;
+}
+
+#containerHeader {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(175, 175, 175);
+  margin: 15px;
+}
+
+#containerHeader > div {
+  text-align:center;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 150px;
+  height: 30px;
+}
+
+table {
+  color: rgba(#fff, 0.85);
+  th, td {
+    line-height: 2;
+    border-bottom: none;
+    padding: 0.75rem 1rem;
+  }
+  tbody {
+    color: $text;
+    tr {
+      background: rgba(#fff, 0.05);
+      border: none;
+      border-top: 1px solid rgba(#fff, 0.1);
+      &:nth-of-type(odd) {
+        background: rgba(#fff, 0.1);
+      }
+      &:last-child {
+        border-bottom: 1px solid rgba(#fff, 0.1);
+      }
+      td {
+        background: transparent;
+        border: 1px solid rgba(#fff, 0.05);
+        &:last-child {
+          text-align: center;
+        }
+        a {
+          color: rgba($accent, 0.9);
+          &:hover {
+            color: $accent;
+          }
+        }
+        &:last-child {
+          // padding-left: 0 !important;
+          .btn {
+            margin: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-close {
+  font-size: 1rem;
+  padding: 3px;
+  i {
+    position: relative;
+    top: -1px;
+  }
+}

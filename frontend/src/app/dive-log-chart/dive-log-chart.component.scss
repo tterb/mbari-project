@@ -1,0 +1,19 @@
+
+.dive-log-chart {
+  width: calc(100% + 2rem) !important;
+}
+
+.advanced-pie-legend {
+  height: 100% !important;
+  .total-value {
+    display: none !important;
+  }
+}
+
+.advanced-pie-legend-wrapper {
+  height: 200px !important;
+}
+
+.item-percent.ng-star-inserted {
+  display: none !important;
+}

@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  mbariservice:
+    build: ./
+    restart: "no"
+    depends_on:
+      - db
+    networks:
+      dbnet:
+    ports:
+      - 127.0.0.1:8080:8080
+  db:
+    image: 'mongo:4'
+    restart: "no"
+    networks:
+      dbnet:
+        aliases:
+          - db
+    volumes:
+      - ./mongo:/data/db
+
+networks:
+  dbnet:

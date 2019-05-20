@@ -1,0 +1,280 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './vars';
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900');
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 !important;
+  app-root div {
+    padding: 0 !important;
+  }
+}
+
+a, .link {
+  color: rgba($accent, 0.85);
+  transition: all 350ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: $accent;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.heading {
+  color: white;
+}
+
+form {
+  margin-left: 0.5em;
+  .fa {
+    position: relative;
+    color: $accent;
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+  .form-group:last-child {
+    margin-top: -0.5em;
+  }
+  input, input:focus,
+  .form-control, .form-control:focus {
+    display: inline;
+    background: rgba(#fff, 0.1);
+    color: $text-bold;
+    border: 1px inset rgba(#000, 0.5);
+    border-radius: 40px;
+    box-shadow: none;
+  }
+  .select-container {
+    display: inline-block;
+    position: relative;
+    width: 80% !important;
+    select {
+      color: rgba(#fff, 0.75) !important;
+      width: 100% !important;
+      border: none !important;
+      appearance: none;
+      .option {
+        color: rgba(#fff, 0.9) !important;
+      }
+    }
+    &:after {
+      content: '▼';
+      position: absolute;
+      color: rgba(#fff, 0.5);
+      font-size: 12px;
+      font-weight: 700;
+      width: 25px;
+      right: 8px;
+      bottom: 8px;
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 2;
+    }
+  }
+}
+
+.page-wrapper {
+  background: $bg;
+  min-height: calc(100vh - 50px);
+  margin-top: 56px;
+  margin-bottom: 8rem;
+  .page-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    h1 {
+      font-size: 3rem;
+      @media (max-width: 768px) {
+        padding: 0 1rem;
+      }
+      @media (min-width: 768px) {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.section-wrapper {
+  color: $text;
+  width: 80%;
+  margin: 6rem auto;
+  p {
+    width: 75%;
+  }
+}
+
+.error {
+  color: $error;
+}
+
+.centered {
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  object-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-container {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $text;
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20vh 0 !important;
+  h1, h2, h3, h4, h5 {
+    color: $text-bold;
+  }
+}
+
+button, .btn {
+  font-size: 0.95em;
+  letter-spacing: 0.005rem;
+}
+
+.btn-round {
+  display: flex;
+  font-size: 1.5em;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+  border-radius: 100% !important;
+  box-shadow: 0 0px 1px 0 rgba(#000, 0.3), 0 1px 4px 0 rgba(#000, 0.12);
+  box-sizing: border-box;
+  transition: all 300ms ease-in-out;
+  padding: 24px;
+  i {
+    font-size: 1em;
+  }
+}
+
+.btn-rounded {
+  position: relative;
+  min-width: 12vw;
+  top: -3px;
+  border-radius: 30px !important;
+  box-shadow: 0 2px 3px rgba(#000, 0.6);
+  transition: color 300ms ease-in-out, all 450ms ease 0ms;
+  padding: 12px 45px;
+  &:hover {
+    border-radius: 22.5px !important;
+    box-shadow: 0 1px 3px rgba(#000, 0.85);
+  }
+}
+
+.btn-dark {
+  background: $bg;
+  color: rgba(#fff, 0.8);
+  text-shadow: 0 1px 1.5px rgba(#000, 0.5);
+  &:hover {
+    background: $accent !important;
+    color: #fff !important;
+    text-shadow: 0 1px 1.5px rgba(#000, 0.75);
+  }
+}
+
+.btn-accent {
+  background: $accent;
+  color: rgba(#000, 0.9);
+  font-weight: 500;
+  border-radius: 3px;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background: darken(#F5BB3B, 8%);
+    color: #000;
+  }
+  &.btn-outline:hover {
+    color: #000;
+  }
+}
+
+.btn-outline {
+  background: rgba(#000, 0.1);
+  color: rgba(#fff, 0.85);
+  border: 2px solid rgba(#fff, 0.85);
+  &:hover {
+    color: $accent;
+    border: 2px solid $accent;
+  }
+}
+
+.btn-outline-white:hover {
+  background: rgba(#fff, 0.1) !important;
+  color: white;
+  text-shadow: 0 0.5px 2px rgba(#000, 0.6) !important;
+  transition: all 350ms ease-in-out;
+}
+
+button[type="submit"] {
+  font-size: 0.95em !important;
+}
+
+.navbar, footer {
+  background: $bg-dark;
+}
+
+// Mobile menu
+.navbar-collapse.collapse {
+  transition: all 350ms ease-in-out;
+}
+
+.owl-dt-timer-divider, 
+.owl-dt-control-arrow-button svg {
+  color: rgba(#000, 0.75) !important;
+  fill: rgba(#000, 0.75) !important;
+}
+
+footer div {
+  padding: 1.25rem 0 !important;
+  a:hover {
+    color: $accent;
+  }
+}
+
+
+/*** Fade-in animations ***/
+
+tr, th, form,
+.diver-list li,
+.info-container {
+  animation-name: fade-in;
+  animation-fill-mode: both;
+  animation-duration: 1.5s;
+}
+
+form,
+.info-container {
+  animation-duration: 0.5s;
+}
+
+@for $i from 1 through 20 {
+	tr:nth-of-type(#{$i}),
+  th:nth-of-type(#{$i}),
+  form:nth-of-type(#{$i}),
+  .info-container:nth-of-type(#{$i}) {
+		animation-delay: #{($i)/10}s;
+  }
+  .diver-list li:nth-of-type(#{$i}) {
+    animation-delay: #{(($i)/10)+0.25}s;
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

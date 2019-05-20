@@ -1,0 +1,14 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg fixed-top navbar-dark col-12 justify-content-end scrolling-navbar intro-fixed-nav py-0" [containerInside]="false">
+  <mdb-navbar-brand class="mr-auto">
+    <a class="nav-link brand-logo nav-item" routerLink="/"><img src="assets/img/logo/logo_white.svg" alt="MBARI"/> MBARI</a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav ml-auto">
+      <!-- <li class="brand-logo nav-item"><a class="nav-link" routerLink="/"><img src="assets/img/logo/logo_white.svg" alt="MBARI"/> MBARI</a></li> -->
+      <li class="nav-item"><a class="nav-link waves-light"  routerLink="/home" [routerLinkActive]="'is-active'" mdbWavesEffect>Home</a></li>
+      <li class="nav-item"><a class="nav-link waves-light" routerLink="/dashboard" [routerLinkActive]="'is-active'" mdbWavesEffect>Dashboard</a></li>
+      <li class="nav-item"><a class="nav-link waves-light" routerLink="/dive-log" [routerLinkActive]="'is-active'" mdbWavesEffect>Dive Log</a></li>
+      <li class="nav-item"><a class="nav-link waves-light" routerLink="/login" [routerLinkActive]="'is-active'" mdbWavesEffect>Login</a></li>
+    </ul>
+  </links>
+</mdb-navbar>

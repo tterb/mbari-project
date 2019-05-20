@@ -1,0 +1,42 @@
+<div class="bg-container container">
+  <!-- Register -->
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="text-center col-md-8 col-md-offset-2 p-4 signup-form">
+    <h2 class="mt-1 mb-4">Sign up</h2>
+    <!-- Name -->
+    <div class="input-container">
+      <i class="fa fa-user-o fa-fw prefix"></i>
+      <input formControlName="name" type="text" class="form-control" placeholder="Name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error"> <!-- flags if name is not inputted -->
+        <div *ngIf="messageForm.controls.name.errors.required">Name is required</div>
+      </div>
+    </div>
+    <!-- Username -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-user prefix"></i>
+      <input formControlName="username" type="text" class="form-control" id="inputUsername3MD" placeholder="Username">
+      <div *ngIf="submitted && messageForm.controls.username.errors" class="error"> <!-- flags if username is not inputted -->
+        <div *ngIf="messageForm.controls.username.errors.required">Username is required</div>
+      </div>
+    </div>
+    <!-- Password -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-key prefix"></i>
+      <input formControlName="password" type="password" class="form-control" id="inputPassword3MD" placeholder="Password">
+      <div *ngIf="submitted && messageForm.controls.password.errors" class="error"> <!-- flags if password is not inputted -->
+        <div *ngIf="messageForm.controls.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <!-- Confirm Password -->
+    <div class="input-container">
+      <i class="fa fa-check-square fa-fw prefix"></i>
+      <input formControlName="confirmPassword" type="password" class="form-control" id="inputConfirmPassword3MD" placeholder="Confirm Password">
+      <div *ngIf="submitted && messageForm.controls.confirmPassword.errors" class="error"> <!-- flags if password confirmation is not inputted -->
+        <div *ngIf="messageForm.controls.confirmPassword.errors.required">Password confirmation is required</div>
+      </div>
+    </div>
+    <!-- Sign in button -->
+    <button mdbBtn type="submit" class="btn btn-md btn-accent btn-outline waves-light my-5" mdbWavesEffect>Register</button>
+    <!-- Register -->
+    <p>Already a member? <span class="link" routerLink="/login">Login</span></p> <!-- shows the login component -->
+  </form>
+</div>

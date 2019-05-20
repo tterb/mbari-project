@@ -1,0 +1,55 @@
+<div class="bg-container container">
+  <!-- Login -->
+  <form [formGroup]="diveForm" (ngSubmit)="onSubmit()" class="text-center col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 p-4 login-form">
+    <h2 class="mt-1 mb-4">Add a Dive</h2>
+    <!-- Error container -->
+    <div class="error mb-3" *ngIf="invalid">There are errors in the provided dive data</div>
+    <!-- Diver -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-user prefix"></i>
+      <div class="select-container">
+        <select formControlName="diver" type="diver" class="browser-default custom-select form-control ng-untouched ng-pristine ng-invalid">
+          <option style="color:gray" value="null" disabled selected>Diver</option>
+          <ng-container *ngFor="let diver of divers;">
+            <option value="{{ diver }}" class="option">{{ diver }}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <!-- Dive Site -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-map-marker prefix"></i>
+      <div class="select-container">
+        <select formControlName="location" type="location" class="browser-default custom-select form-control ng-untouched ng-pristine ng-invalid">
+          <option style="color:gray" value="null" disabled selected>Location</option>
+          <ng-container *ngFor="let location of sites;">
+            <option value="{{ location }}" class="option">{{ location }}</option>
+          </ng-container>
+        </select>
+      </div>
+      <div *ngIf="submitted && diveForm.controls.location.errors" class="error">
+        <div *ngIf="diveForm.controls.location.errors.required">Location is required</div>
+      </div>
+    </div>
+    <!-- Start time -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-clock-o prefix"></i>
+      <input formControlName="startTime" [(ngModel)]="dateTime2" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" placeholder="Start Time" class="form-control">
+      <owl-date-time #dt2></owl-date-time>
+      <div *ngIf="submitted && diveForm.controls.startTime.errors" class="error">
+        <div *ngIf="diveForm.controls.startTime.errors.required">Start time is required</div>
+      </div>
+    </div>
+    <!-- End time -->
+    <div class="input-container">
+      <i class="fa fa-fw fa-clock-o prefix"></i>
+      <input formControlName="endTime" [(ngModel)]="dateTime3" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" placeholder="End Time" class="form-control">
+      <owl-date-time #dt3></owl-date-time>
+      <div *ngIf="submitted && diveForm.controls.endTime.errors" class="error">
+        <div *ngIf="diveForm.controls.endTime.errors.required">End time is required</div>
+      </div>
+    </div>
+    <!-- Add Dive button -->
+    <button mdbBtn type="submit" class="btn btn-md btn-accent btn-outline waves-light my-5" mdbWavesEffect>Add Dive</button>
+  </form>
+</div>

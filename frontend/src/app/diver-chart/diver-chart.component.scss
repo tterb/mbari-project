@@ -1,0 +1,13 @@
+@import "../../vars";
+
+#graphContainer{
+  .chart-legend .legend-label:hover {
+    color: $accent !important;
+  }
+}
+
+::ng-deep .ngx-charts { 
+  text { 
+    fill: rgba(#fff, 0.8) !important;
+  }
+}

@@ -1,0 +1,94 @@
+@import "../../vars";
+
+.bg-container {
+  background-image: linear-gradient(rgba(#000, 0.15), rgba(#000, 0.15)), url('../../assets/img/ocean.jpg') !important;
+}
+
+.inline {
+  float:left;
+  margin: auto;
+}
+
+.info-container {
+  background: $bg-dark;
+  // width: 30%;
+  border: 1px outset rgba(#fff, 0.2);
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: 30px;
+  vertical-align: top;
+  //display: flex;
+  //flex-wrap: wrap;
+  //justify-content: center;
+  float:left;
+  
+  .section-head {
+    position: relative;
+    left: -0.5rem;
+    vertical-align: middle;
+    .fa {
+      display: inline-block;
+      position: relative;
+      color: $accent;
+      font-size: 1.75rem;
+      top: -0.75rem;
+      right: 0.25rem;
+      vertical-align: middle;
+    }
+    h1 {
+      display: inline-block;
+      position: relative;
+    }
+  }
+  
+  .interior.content {
+      margin-left: -0.5rem;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+      h5 {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.75rem;
+      }
+      .btn {
+        width: auto;
+        margin: 0.5rem 0.375rem !important;
+        padding: 12px 30px !important;
+      }
+      ul {
+        text-align: left;
+        list-style: none;
+        padding-top: 0.5rem;
+        li {
+          border-bottom: 1px solid rgba(#fff, 0.1);
+          margin-bottom: 0.25rem;
+          padding-bottom: 0.25rem;
+        }
+      }
+  }
+
+  .btn {
+    font-size: 0.8em;
+    padding: 8px 25px !important;
+  }
+}
+
+.chart-wrapper {
+  display: flex; 
+  height: 100%;
+  padding: 1rem 0 !important;
+  .dive-log-chart {
+    width: calc(100% + 2rem) !important;
+    height: 100% !important;
+    margin-left: -2rem !important;
+    .advanced-pie-legend {
+      max-height: 100% !important;
+    }
+  }
+  &.diver-chart {
+    margin-top: 1.5rem;
+    margin-bottom: -3rem !important;
+  }
+}
+
